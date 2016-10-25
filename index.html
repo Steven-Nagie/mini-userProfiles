@@ -5,12 +5,20 @@
     <title>mini-userProfiles</title>
     <link rel="stylesheet" href="styles.css"></link>
 </head>
-<body ng-controller="MainController" ng-service='mainService'>
+<body ng-controller="MainController">
 
-    {{thisAppIsBroken}}
+  <ul ng-repeat="user in users" ng-class="{favorite: user.isFavorite}">
+    <li>{{user.first_name}} {{user.last_name}}</li>
+    <img src="{{user.avatar}}" alt="avatar">
+    <button ng-click="toggleFavorite(user.id)">Make Favorite</button>
+  </ul>
+
 
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
      <script src="app.js"></script>
      <script src="controller.js"></script>
+     <script src="service.js"></script>
+
+     </script>
 </body>
 </html>

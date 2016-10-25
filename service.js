@@ -22,4 +22,14 @@ this.getUsers = function() {
   return data;
 };
 
+this.toggleFavorite = function(i) {
+  if (!data[i].isFavorite) {
+    data[i].isFavorite = true;
+    console.log(data[i].first_name + " is a favorite.");
+  } else {
+    data[i].isFavorite = false;
+    console.log(data[i].first_name + " is not a favorite");
+  }
+};
+
 });
